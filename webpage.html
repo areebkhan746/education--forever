@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Forever</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #141E30, #243B55);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            scroll-behavior: smooth;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.1);
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            backdrop-filter: blur(10px);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+            position: relative;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            color: #00C9FF;
+            text-decoration: underline;
+        }
+        .content {
+            text-align: center;
+            margin-top: 100px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .visible {
+            opacity: 1;
+        }
+        .btn {
+            background: #00C9FF;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1rem;
+            box-shadow: 0px 4px 10px rgba(0, 201, 255, 0.5);
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background: #009ACD;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            backdrop-filter: blur(10px);
+        }
+        .sidebar {
+            position: fixed;
+            left: 20px;
+            top: 100px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        .left-align {
+            font-size: 1.2em;
+        }
+    </style>
+    <script>
+        function openCoursesPage() {
+            const newWindow = window.open('', '_blank');
+            newWindow.document.write(`
+                <html lang='en'>
+                <head>
+                    <meta charset='UTF-8'>
+                    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+                    <title>Best Courses of the World</title>
+                    <style>
+                        body {
+                            font-family: 'Poppins', sans-serif;
+                            text-align: center;
+                            background: linear-gradient(to right, #141E30, #243B55);
+                            color: white;
+                            margin: 0;
+                            padding: 50px;
+                        }
+                        .left-align {
+                            text-align: left;
+                            margin-left: 20px;
+                            font-size: 1.2em;
+                        }
+                    </style>
+                </head>
+                <body>
+                    
+                    <h1>Best Courses of the World</h1>
+                    <h2>دنیا کے بہترین کورسز</h2>
+                    <h3 class='left-align'>Computer Course</h3>
+                    <p class='left-align'>Best IT Courses to Learn</p>
+                    <p class='left-align'>Absolutely, pursuing Best IT courses to learn after graduation can enhance your skill set and make you more competitive in the job market. In Pakistan, as in many other places, the IT industry is growing rapidly. Here are some popular IT courses you might consider:</p>
+                    <ul class='left-align'>
+                        <li>Web Development: HTML, CSS, JavaScript, React, Angular, Vue.js, Node.js, Django</li>
+                        <li>Mobile App Development: Swift, Kotlin, Java</li>
+                        <li>Data Science and Machine Learning: Python, TensorFlow, PyTorch</li>
+                        <li>Cybersecurity: CEH, CompTIA Security+</li>
+                        <li>Cloud Computing: AWS, Azure, Google Cloud</li>
+                        <li>Database Management: MySQL, PostgreSQL, MongoDB</li>
+                        <li>IT Project Management: PMP, ScrumMaster</li>
+                        <li>DevOps: Docker, Kubernetes, CI/CD</li>
+                        <li>UI/UX Design: Adobe XD, Figma</li>
+                        <li>Blockchain: Solidity, Ethereum</li>
+                        <li>Network Administration: CCNA, CompTIA Network+</li>
+                        <li>Artificial Intelligence: NLP, Computer Vision</li>
+                        <li>Software Testing: Selenium, Jira</li>
+                        <li>Full Stack Development: Frontend and Backend</li>
+                        <li>IoT: Arduino, Raspberry Pi</li>
+                        <li>Game Development: Unity, Unreal Engine</li>
+                    </ul>
+                       <h1 class='left-align'>Medical Courses</h1>
+                    <p class='left-align'>MBBS. The MBBS course is among the most prestigious medical degrees, combining theoretical knowledge with practical training. Students learn about various medical fields, preparing them for careers as physicians or surgeons.
+                         Graduates can pursue further specialization through postgraduate degrees.</p>
+                          <ol class='left-align'>
+                        <li>MBBS (Bachelor of Medicine, Bachelor of Surgery)</li>
+                        <li>BDS (Bachelor of Dental Surgery)</li>
+                        <li>BAMS (Bachelor of Ayurvedic Medicine and Surgery)</li>
+                        <li>BHMS (Bachelor of Homeopathic Medicine and Surgery)</li>
+                        <li>BPT (Bachelor of Physiotherapy)</li>
+                        <li>B.Sc Nursing</li>
+                        <li>B.Pharm (Bachelor of Pharmacy)</li>
+                        <li>BMLT (Bachelor of Medical Laboratory Technology)</li>
+                        <li>B.Sc Medical Imaging Technology</li>
+                        <li>B.Optom (Bachelor of Optometry)</li>
+                        <li>B.Sc Nutrition and Dietetics</li>
+                        <li>B.Sc Biotechnology</li>
+                        <li>B.Sc Medical Microbiology</li>
+                        <li>B.Sc Medical Lab Sciences</li>
+                        <li>B.Sc Medical Radiation Technology</li>
+                        <li>B.Sc Medical Anatomy</li>
+                        <li>B.Sc Medical Biochemistry</li>
+                        <li>B.Sc Medical Physiology</li>
+                        <li>B.Sc Medical Biophysics</li>
+                        <li>Bachelor of Occupational Therapy (BOT)</li>
+                    </ol>
+                </body>
+
+                </body>
+                </html>
+            `);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Education Forever</h1>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="#" onclick="openCoursesPage()">Courses</a></li>
+                <li><a href="dashboard.html#quizzes">Quizzes</a></li>
+                <li><a href="dashboard.html#notes">Notes</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="content visible">
+        <h1>Welcome to Education Forever</h1>
+        <p>Empowering students with quality education and resources.</p>
+        <p>"Education is the most powerful weapon which you can use to change the world."</p>
+        <p>"تعلیم سب سے طاقتور ہتھیار ہے جسے آپ دنیا کو بدلنے کے لیے استعمال کر سکتے ہیں۔"</p>
+        <p>"Learning never exhausts the mind."</p>
+        <p>"سیکھنا ذہن کو کبھی نہیں تھکاتا۔"</p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Education Forever. All rights reserved. | Created by: AREEB KHAN</p>
+    </footer>
+</body>
+</html>
